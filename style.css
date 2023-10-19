@@ -11,7 +11,8 @@
   --font-montserrat: 'Montserrat', sans-serif;
   --font-dancing-script: 'Dancing Script', cursive;
   
-  --bg-linear-gradient: linear-gradient(45deg, #190361 0%, #B0F 100%);
+   --bg-linear-gradient: linear-gradient(45deg, #190361 0%, #B0F 100%);
+  
   
   --color-title:  #34355B;
   --color-black: #000;
@@ -27,6 +28,9 @@ body {
   display: grid;
   place-content: center;
   height: 100vh;
+  background-size: 200% 200%;
+
+  animation: gradient 10s ease infinite;
 }
 
 body, button {
@@ -67,6 +71,8 @@ main {
   padding: 1rem;
   background-color: var(--color-light-gray);
   box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
+
+  animation: 1.5s ease-out animatedLuckyText;
 }
 
 .opened-cookie {
@@ -84,13 +90,15 @@ button {
   border-radius: .4rem;
   border: none;
   background-color: var(--color-orange);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e38400;
 }
 
 .fortune-cookie:hover {
-  animation-name: break-cookie;
-  animation-duration: 0.4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: .4s linear break-cookie infinite;
   cursor: pointer;
 }
 
@@ -118,4 +126,23 @@ button {
   100% {
     transform:translate(0);
   }
+}
+
+@keyframes animatedLuckyText {
+  0% {
+    transform: scale(0.1);
+    translate: 10px 150px;
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
