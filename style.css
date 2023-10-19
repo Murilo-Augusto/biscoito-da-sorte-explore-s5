@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-dancing-script: 'Dancing Script', cursive;
+  
+  --bg-linear-gradient: linear-gradient(45deg, #190361 0%, #B0F 100%);
+  
+  --color-title:  #34355B;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-light-gray: #E4EDF1;
+  --color-orange: #ff9500;
+}
+
+body {
+  background: var(--bg-linear-gradient);
+  font-size: 1.6rem;
+
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+body, button {
+  font-family: var(--font-dm-sans);
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  border-radius: .5rem;
+  max-width: 42.8rem;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.80);
+  background-color: var(--color-white);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.container h1 {
+  font-family: var(--font-montserrat);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.lucky-text {
+  font-family: var(--font-dancing-script);
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  padding: 1rem;
+  background-color: var(--color-light-gray);
+  box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
+}
+
+.opened-cookie {
+  padding: 4.2rem 0;
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+
+  width: max-content;
+  padding: 1.6rem;
+  
+  border-radius: .4rem;
+  border: none;
+  background-color: var(--color-orange);
+}
+
+.fortune-cookie:hover {
+  animation-name: break-cookie;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+@keyframes break-cookie {
+  0% {
+    transform:translate(0);
+  }
+
+  20% {
+    transform:translate(2px,-2px);
+  }
+
+  40% {
+    transform:translate(2px,2px);
+  }
+
+  60% {
+    transform:translate(2px,-2px);
+  }
+
+  80% {
+    transform:translate(-2px,-2px);
+  }
+
+  100% {
+    transform:translate(0);
+  }
+}
